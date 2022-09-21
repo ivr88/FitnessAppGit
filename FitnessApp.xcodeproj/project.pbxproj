@@ -277,8 +277,8 @@
 		1C7A74A62899B317007A52BB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1CBDE8B528C08BDD00B7E1E2 /* Date + Extension.swift */,
 				1C7A74A72899B338007A52BB /* UIKit */,
+				1CBDE8B528C08BDD00B7E1E2 /* Date + Extension.swift */,
 				1C20E7FD28C7879C00FD45B0 /* Int + Extensions.swift */,
 			);
 			path = Extensions;

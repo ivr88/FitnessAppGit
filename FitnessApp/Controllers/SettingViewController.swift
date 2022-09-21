@@ -228,7 +228,6 @@ class SettingViewController: UIViewController {
             RealmManager.shared.saveUserModel(model: userModel)
         } else {
             RealmManager.shared.updateUserModel(model: userModel)
-            
         }
         
         userModel = UserModel()
@@ -243,8 +242,9 @@ class SettingViewController: UIViewController {
             weightTextField.text = "\(userArray[0].userWeight)"
             targetTextField.text = "\(userArray[0].userTarget)"
         
-            guard let data = userArray[0].userImage else { return }
-            guard let image = UIImage(data: data) else { return }
+            guard let data = userArray[0].userImage,
+                  let image = UIImage(data: data)
+            else { return }
             addPhotoImageView.image = image
             addPhotoImageView.contentMode = .scaleAspectFit
         }
@@ -256,15 +256,13 @@ class SettingViewController: UIViewController {
               let secondName = secondNameTextField.text,
               let height = heightTextField.text,
               let weight = weightTextField.text,
-              let target = targetTextField.text else {
-                  return
-              }
+              let target = targetTextField.text
+        else { return }
         
         guard let intHeight = Int(height),
               let intWeight = Int(weight),
-              let intTarget = Int(target) else {
-                  return
-              }
+              let intTarget = Int(target)
+        else { return }
         
         userModel.userFirstName = firstName
         userModel.userSecondName = secondName

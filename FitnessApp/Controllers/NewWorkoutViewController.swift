@@ -99,7 +99,6 @@ class NewWorkoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         setupViews()
         setConstraints()
         setDelegates()
@@ -132,8 +131,10 @@ class NewWorkoutViewController: UIViewController {
     
     @objc private func saveButtonTapped() {
         print("saveButtonTapped")
+        
         setModel()
         saveModel()
+        
     }
     
     private func addTaps() {
@@ -210,6 +211,7 @@ extension NewWorkoutViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nameTextField.resignFirstResponder()
+        
     }
 }
 

@@ -150,8 +150,9 @@ class MainViewController: UIViewController {
         if userArray.count != 0 {
             userNameLabel.text = userArray[0].userFirstName + userArray[0].userSecondName
         
-            guard let data = userArray[0].userImage else { return }
-            guard let image = UIImage(data: data) else { return }
+            guard let data = userArray[0].userImage,
+                  let image = UIImage(data: data)
+            else { return }
             userPhotoImageView.image = image
         }
     }
@@ -209,7 +210,6 @@ class MainViewController: UIViewController {
             }
         }
     }
-    
 }
 
 //MARK: - StartWorkoutProtocol

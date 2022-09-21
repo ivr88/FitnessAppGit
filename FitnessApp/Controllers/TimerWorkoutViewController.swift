@@ -198,8 +198,9 @@ extension TimerWorkoutViewController: NextSetTimerProtocol {
     func editingButtonTapped() {
         customAlert.alertCustom(viewController: self, repsOrTimer: "Time of set") { [self] sets, timerOfSet in
             if sets != "" && timerOfSet != "" {
-                guard let numberOfSets = Int(sets) else {return}
-                guard let numberOfTimer = Int(timerOfSet) else {return}
+                guard let numberOfSets = Int(sets),
+                      let numberOfTimer = Int(timerOfSet)
+                else { return }
                 let (min, sec) = numberOfTimer.convertSeconds()
                 timerWorkoutParametersView.numberOfSetsLabel.text = "\(numberOfSet)/\(sets)"
                 timerWorkoutParametersView.timeLabel.text = "\(min) min \(sec) sec"

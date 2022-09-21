@@ -71,10 +71,9 @@ class OnboardingViewController: UIViewController {
         collectionView.register(OnboardingCollectionViewCell.self, forCellWithReuseIdentifier: idOnboardingCell)
         
         guard let imageFirst = UIImage(named: "onboardingFirst"),
-        let imageSecond = UIImage(named: "onboardingSecond"),
-        let imageThird = UIImage(named: "onboardingThird") else {
-            return
-        }
+              let imageSecond = UIImage(named: "onboardingSecond"),
+              let imageThird = UIImage(named: "onboardingThird")
+        else { return }
         
         let firstScreen = OnboardingStruct(topLabel: "Have a good health",
                                           bottomLabel: "Being healthy is all, no health is nothing. So why do not we",

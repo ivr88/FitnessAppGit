@@ -159,9 +159,8 @@ class StatisticViewController: UIViewController {
             workoutArray = localRealm.objects(WorkoutModel.self).filter(predicateDifference).sorted(byKeyPath: "workoutDate")
             
             guard let last = workoutArray.last?.workoutReps,
-                  let first = workoutArray.first?.workoutReps else {
-                return
-            }
+                  let first = workoutArray.first?.workoutReps
+            else { return }
             
             let differenceWorkout = DifferenceWorkout(name: name, lastReps: last, firstReps: first)
             differenceArray.append(differenceWorkout)
